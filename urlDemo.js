@@ -21,5 +21,6 @@ console.log(urlObj.search);
 const params = new URLSearchParams(urlObj.search);
 console.log(params.get('q'));
 params.append('limit', '5');
+params.delete('limit');
 console.log(params);
 
