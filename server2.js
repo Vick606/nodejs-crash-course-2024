@@ -55,6 +55,8 @@ const server = createServer((req, res) => {
                 getUsersHandler();
             } else if (req.url.match(/\/api\/users\/([0-9]+)/) && req.method === 'GET') {
                 getUserByIdHandler();
+            } else {
+                notFoundHandler();
             }
     })
 });
