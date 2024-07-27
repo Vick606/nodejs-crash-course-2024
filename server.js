@@ -2,7 +2,10 @@ import http from 'http';
 const PORT = 8000;
 
 const server = http.createServer((req, res) => {
-    res.end('Hello World, coding in session');
+    res.setHeader('Content-Type', 'text/html');
+
+
+    res.end('<h1>Hello World, coding in session<h1>');
 });
 
 server.listen(PORT, () => {
