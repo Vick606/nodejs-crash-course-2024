@@ -53,6 +53,8 @@ const server = createServer((req, res) => {
         jsonMiddleware(req, res, () => {
             if (req.url === '/api/users' && req.method === 'GET') {
                 getUsersHandler();
+            } else if (req.url.match(/\/api\/users\/([0-9]+)/) && req.method === 'GET') {
+                getUserByIdHandler();
             }
     })
 });
