@@ -12,3 +12,11 @@ console.log(url.format(urlObj));
 
 // import.meta.url - file url
 console.log(import.meta.url);
+
+// fileURLToPath()
+console.log(url.fileURLToPath(import.meta.url));
+
+console.log(urlObj.search);
+
+const params = new URLSearchParams(urlObj.search);
+console.log(params);
