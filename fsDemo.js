@@ -26,4 +26,15 @@ import fs from 'fs/promises';
     }
     };
 
+    // writeFile
+    const writeFile = async () => {
+        try {
+            await fs.writeFile('./test.txt', 'Hello, I am writing to this file');
+            console.log('File written to...');
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    writeFile();
     readFile();
