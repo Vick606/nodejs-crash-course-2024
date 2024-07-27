@@ -20,12 +20,11 @@ const server = createServer((req, res) => {
         res.setHeader('Content-Type', 'application/json');
         if (user) {
             res.write(JSON.stringify(user));
-            res.end();
         } else {
             res.statusCode = 404;
             res.write(JSON.stringify({ message: 'User not found' }));
-            res.end();
         }
+        res.end();
      } else {
         res.setHeader('Content-Type', 'application/json');
         res.statusCode = 404;
