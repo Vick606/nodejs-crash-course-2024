@@ -36,5 +36,16 @@ import fs from 'fs/promises';
         }
     };
 
+    // appendFile()
+    const appendFile = async () => {
+        try {
+            await fs.appendFile('./test.txt', '\nThis is appended text please');
+            console.log('File appended to...');
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     writeFile();
+    appendFile();
     readFile();
