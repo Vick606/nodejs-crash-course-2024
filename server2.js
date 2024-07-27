@@ -52,11 +52,11 @@ const server = createServer((req, res) => {
     logger(req, res, () => {
         jsonMiddleware(req, res, () => {
             if (req.url === '/api/users' && req.method === 'GET') {
-                getUsersHandler();
+                getUsersHandler(req, res);
             } else if (req.url.match(/\/api\/users\/([0-9]+)/) && req.method === 'GET') {
-                getUserByIdHandler();
+                getUserByIdHandler(req, res);
             } else {
-                notFoundHandler();
+                notFoundHandler(req, res);
             }
     })
 });
