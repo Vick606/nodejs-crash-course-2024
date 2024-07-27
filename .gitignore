@@ -34,12 +34,5 @@ dist-ssr
 # Build files
 /build
 
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
-
-# Testing
-/coverage
-
 # specific
 .directory
