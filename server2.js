@@ -76,7 +76,7 @@ const server = createServer((req, res) => {
             } else {
                 notFoundHandler(req, res);
             }
-    })
+    });
 });
 });
 
