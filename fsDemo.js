@@ -12,6 +12,18 @@ import fs from 'fs/promises';
 // console.log(data);
 
 // readFile() - Promise .then()
-fs.readFile('./test.txt', 'utf8')
-  .then((data) => console.log(data))
-  .catch((err) => console.log(err));
+// fs.readFile('./test.txt', 'utf8')
+  // .then((data) => console.log(data))
+  // .catch((err) => console.log(err));
+
+  // readFile() - async/await
+  const readFile = async () => {
+    try {
+        const data = await fs.readFile('./test.txt', 'utf8');
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+    };
+
+    readFile();
