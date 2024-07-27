@@ -19,7 +19,7 @@ const server = createServer((req, res) => {
         const user = users.find((user) => user.id === parseInt(id));
         if (user) {
             res.setHeader('Content-Type', 'application/json');
-            res.write(JSON.stringify({ id: 1, name: 'Jack Sutherland' }));
+            res.write(JSON.stringify(user));
             res.end();
         } else {
             res.setHeader('Content-Type', 'application/json');
