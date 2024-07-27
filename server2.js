@@ -50,18 +50,12 @@ const notFoundHandler = (req, res) => {
 
 const server = createServer((req, res) => {
     logger(req, res, () => {
-        if (req.url === '/api/users' && req.method === 'GET') {
-            res.setHeader('Content-Type', 'application/json');
-            res.write(JSON.stringify(users));
-            res.end();
-        } else if (req.url.match(/\/api\/users\/([0-9]+)/) && req.method === 'GET') {
-            const id = req.url.split('/')[3];
-            const user = users.find((user) => user.id === parseInt(id));
-            res.setHeader('Content-Type', 'application/json');
-         } else {
-            res.setHeader('Content-Type', 'application/json');
-         }
+        jsonMiddleware(req, res, () => {
+            if (req.url === '/api/users' && req.method === 'GET') {
+                getUsersHandler();
+            }
     })
+});
 });
 
 server.listen(PORT, () => {
