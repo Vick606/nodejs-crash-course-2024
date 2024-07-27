@@ -10,7 +10,11 @@ const users = [
 ];
 
 const server = createServer((req, res) => {
-
+    if (req.url === '/api/users' && req.method === 'GET') {
+        res.setHeader('Content-Type', 'application/json');
+        res.write(JSON.stringify(users));
+        res.end();
+     }
 });
 
 server.listen(PORT, () => {
