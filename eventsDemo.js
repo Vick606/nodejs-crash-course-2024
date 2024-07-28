@@ -17,3 +17,11 @@ myEmitter.on('goodbye', goodbyeHandler);
 // Emit events 
 myEmitter.emit('greet', 'Vick');
 myEmitter.emit('goodbye', 'Vick');
+
+// Error handling
+myEmitter.on('error', (err) => {
+    console.log('An Error Occurred:', err);
+});
+
+// Simulate error
+myEmitter.emit('error', new Error('Opps! Something went wrong'));
