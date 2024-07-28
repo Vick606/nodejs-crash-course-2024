@@ -12,16 +12,16 @@ import crypto from 'crypto';
 // });
 
 // createCipheriv & createDecipheriv
-const algorithm = 'aes-s256-cbc';
+const algorithm = 'aes-256-cbc';
 const key = crypto.randomBytes(32);
 const iv = crypto.randomBytes(16);
 
 const cipher = crypto.createCipheriv(algorithm, key, iv);
-let encrypted = cipher.update('Helo, this is a secrete message', 'utf8', 'hex');
+let encrypted = cipher.update('Hello, this is a secret message', 'utf8', 'hex');
 encrypted += cipher.final('hex');
-console.log(encrypted);
+console.log('Encrypted:', encrypted);
 
 const decipher = crypto.createDecipheriv(algorithm, key, iv);
-let decrypted = decipher.update(encrypted, 'utf8', 'hex');
+let decrypted = decipher.update(encrypted, 'hex', 'utf8');
 decrypted += decipher.final('utf8');
-console.log(decrypted);
+console.log('Decrypted:', decrypted);
